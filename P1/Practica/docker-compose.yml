@@ -1,6 +1,6 @@
 # docker-compose.yml
 services:
-  app:
+  p1:
     build: ./e-commerce
     volumes:
       - ./e-commerce:/e-commerce
