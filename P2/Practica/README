@@ -1,0 +1,7 @@
+Para ejecutar desde 0 esta práctica:
+docker compose -f docker-compose.yml build
+docker compose -f docker-compose.yml up mongo
+docker compose run p1 python Main.py
+
+Para bajarlo
+docker compose -f docker-compose.yml down --remove-orphans
