@@ -1,18 +1,21 @@
 from django.http import HttpResponse
-from models import Product
+from django.shortcuts import render
+
+from .models import Product
 import textwrap
 from pymongo import MongoClient
 import requests
 from pprint import pprint
 import os
 
-
 client = MongoClient('mongo', 27017)
 tienda_db = client.tienda
 productos_collection = tienda_db.productos
 
+
 def index(request):
-    return HttpResponse("Hello, world. You're at the polls index.")
+    return render(request, "index.html", context=None, content_type=None, status=None, using=None)
+
 
 def getProductos(api_url):
     try:
@@ -23,8 +26,10 @@ def getProductos(api_url):
         print(f"Error al obtener datos de la API: {e}")
         return None
 
+
 def empty_database():
     productos_collection.drop()
+
 
 def download_image(url, id):
     response = requests.get(url)
@@ -40,11 +45,13 @@ def download_image(url, id):
     else:
         return None
 
+
 def insert(productos):
     for producto in productos:
         product = Product(**producto)
         product.image = download_image(producto.get('image'), producto.get('id'))
         productos_collection.insert_one(product.model_dump())
+
 
 def find_between_price_range(min_price, max_price, category):
     products = productos_collection.find({
@@ -53,11 +60,13 @@ def find_between_price_range(min_price, max_price, category):
     }).sort("price", 1)
     return list(products)
 
+
 def find_products(keyword):
     products = productos_collection.find({
         "description": {"$regex": keyword, "$options": "i"}
     })
     return list(products)
+
 
 def products_rating(m_rating):
     products = productos_collection.find({
@@ -65,11 +74,13 @@ def products_rating(m_rating):
     })
     return list(products)
 
+
 def mens_clothing_by_rating():
     products = productos_collection.find({
         "category": "men's clothing",
     }).sort("rating.rate", -1)
     return list(products)
+
 
 def calculate_total():
     total = productos_collection.aggregate([
@@ -77,11 +88,9 @@ def calculate_total():
     ])
     return list(total)[0]["total"]
 
+
 def calculate_by_category():
     revenue = productos_collection.aggregate([
         {"$group": {"_id": "$category", "total": {"$sum": "$price"}}}
     ])
     return list(revenue)
-
-
-

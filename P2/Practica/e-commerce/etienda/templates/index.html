@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Links to Requests</title>
+</head>
+
+<body>
+    <h1>Links to Requests</h1>
+    <ul>
+        <li><a href="{% url 'index' %}">Home</a></li>
+        <li><a href="{% url 'get_productos' %}">Get Productos</a></li>
+        <li><a href="{% url 'empty_database' %}">Empty Database</a></li>
+        <li><a href="{% url 'find_products' 'your_keyword' %}">Find Products</a></li>
+        <!-- Add more links for other views as needed -->
+    </ul>
+</body>
+
+</html>
