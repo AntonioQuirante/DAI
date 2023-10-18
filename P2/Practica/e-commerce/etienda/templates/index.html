@@ -11,10 +11,14 @@
     <h1>Links to Requests</h1>
     <ul>
         <li><a href="{% url 'index' %}">Home</a></li>
-        <li><a href="{% url 'get_productos' %}">Get Productos</a></li>
-        <li><a href="{% url 'empty_database' %}">Empty Database</a></li>
-        <li><a href="{% url 'find_products' 'your_keyword' %}">Find Products</a></li>
-        <!-- Add more links for other views as needed -->
+        <li><a href="{% url 'get_productos' %}">Introducir Productos en la base de datos</a></li>
+        <li><a href="{% url 'empty_database' %}">Borrar la Base de datos</a></li>
+        <li><a href="{% url 'find_products' 'pocket' %}">Find Products</a></li>
+        <li><a href="{% url 'find_between_price_range' 50 200 'electronics' %}">Find Electronics between $50 and $200</a></li>
+        <li><a href="{% url 'products_rating' 4 %}">Products with Rating Greater Than 4</a></li>
+        <li><a href="{% url 'mens_clothing_by_rating' %}">Men's Clothing Sorted by Rating</a></li>
+        <li><a href="{% url 'calculate_total' %}">Calculate Total Price of Products</a></li>
+        <li><a href="{% url 'calculate_by_category' %}">Calculate Revenue by Category</a></li>
     </ul>
 </body>
 
