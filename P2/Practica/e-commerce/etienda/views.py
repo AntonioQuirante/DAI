@@ -14,7 +14,7 @@ productos_collection = tienda_db.productos
 
 
 def index(request):
-    return render(request, "index.html", context=None, content_type=None, status=None, using=None)
+    return render(request, "base.html", context=None, content_type=None, status=None, using=None)
 
 
 def getProducts(api_url='https://fakestoreapi.com/products'):
