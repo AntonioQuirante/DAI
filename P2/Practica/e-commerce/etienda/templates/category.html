@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div>
+    <div class="row">
+
+      {% for product in products %}
+      <div class="col-md-4">
+        <div class="card">
+          {% with image_path=product.image|slice:'7:' %}
+              <img src="{% static image_path %}" class="card-img-top" alt="{{ category }}">
+          {% endwith %}
+          <div class="card-body">
+            <h5 class="card-title">{{ product.title }}</h5>
+            <h5 class="card-title">{{ product.price }}€</h5>
+            <h5 class="card-title">{{ product.description }}</h5>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+
+    </div>
+  </div>
+
+
+{% endblock%}

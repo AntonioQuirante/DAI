@@ -14,7 +14,28 @@ productos_collection = tienda_db.productos
 
 
 def index(request):
-    return render(request, "base.html", context=None, content_type=None, status=None, using=None)
+    categories = productos_collection.distinct('category')
+    return render(request, "index.html", {'categories': categories})
+
+
+def category_index(request, category):
+    categories = productos_collection.distinct('category')
+    products = productos_collection.find({
+        "category": {"$regex": category}
+    })
+    return render(request, "category.html", {'products': products, 'categories': categories})
+
+
+def search(request):
+    categories = productos_collection.distinct('category')
+    query = request.GET.get('q')
+    if query:
+        results = productos_collection.find({
+            "title": {"$regex": query}
+        })
+    else:
+        results = None
+    return render(request, 'search.html', {'results': results, 'categories': categories})
 
 
 def getProducts(api_url='https://fakestoreapi.com/products'):
@@ -39,10 +60,10 @@ def download_image(url, id):
     response = requests.get(url)
     if response.status_code == 200:
 
-        os.makedirs('images', exist_ok=True)
+        os.makedirs('static/images', exist_ok=True)
 
         file_name = f'img_{id}.jpg'
-        file_path = os.path.join('images', file_name)
+        file_path = os.path.join('static/images', file_name)
 
         with open(file_path, 'wb') as file:
             file.write(response.content)

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div>
+    <div class="row">
+
+      {% for result in results %}
+      <div class="col-md-4">
+        <div class="card">
+          {% with image_path=result.image|slice:'7:' %}
+              <img src="{% static image_path %}" class="card-img-top" alt="{{ result.title }}">
+          {% endwith %}
+          <div class="card-body">
+            <h5 class="card-title">{{ result.title }}</h5>
+            <h5 class="card-title">{{ result.price }}€</h5>
+            <h5 class="card-title">{{ result.description }}</h5>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+
+    </div>
+  </div>
+
+
+{% endblock%}
