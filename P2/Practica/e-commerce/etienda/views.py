@@ -36,7 +36,7 @@ def upload_product(request):
                 price = form.cleaned_data['precio']
                 description = form.cleaned_data['descripcion']
                 category = form.cleaned_data['categoria']
-                # image = form.cleaned_data['imagen']
+                image = form.cleaned_data['imagen']
                 logger.debug(title, price, description, category)
                 # Create JSON to upload to the database
                 product_data = {
@@ -52,10 +52,11 @@ def upload_product(request):
 
                 # You mentioned getting the last ID from the database for an incremented ID.
                 # Here, use your logic to fetch the last ID.
-                # last_id = 22
+                last_id = 22
 
                 product = Product(**product_data)
-                # product.image = insert_image(image, last_id)  # Assuming insert_image is a function you've defined elsewhere
+                product.image = insert_image(image,
+                                             last_id)  # Assuming insert_image is a function you've defined elsewhere
                 productos_collection.insert_one(
                     product.model_dump())  # Assuming productos_collection is your database collection
                 # Redirect to the homepage
@@ -137,7 +138,8 @@ def insert_image(image, id):
         file_path = os.path.join('static/images', file_name)
 
         with open(file_path, 'wb') as file:
-            file.write(image)
+            for chunk in image.chunks():
+                file.write(chunk)
 
         return file_path
     else:
