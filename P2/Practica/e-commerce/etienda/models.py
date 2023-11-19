@@ -30,4 +30,4 @@ class Purchase(BaseModel):
     products: list
 
     class Config(CustomBaseConfig):
-        arbitrary_types_allowed = True
+        arbitrary_types_allowed = True #debido al tipo anytime que daba error
