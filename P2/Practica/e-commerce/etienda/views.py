@@ -16,6 +16,8 @@ tienda_db = client.tienda
 productos_collection = tienda_db.productos
 
 logger = logging.getLogger(__name__)
+
+
 def get_last_object_id():
     # Ordenar los objetos por _id en orden descendente y obtener el ID del primer documento
     last_object = productos_collection.find_one({}, sort=[('_id', -1)])
@@ -25,42 +27,46 @@ def get_last_object_id():
 
 
 def upload_product(request):
-    if request.method == 'POST':
-        form = ProductoForm(request.POST, request.FILES)
+    if request.user.is_staff:
+        if request.method == 'POST':
+            form = ProductoForm(request.POST, request.FILES)
 
-        if form.is_valid():
-            title = form.cleaned_data['nombre']
-            price = form.cleaned_data['precio']
-            description = form.cleaned_data['descripcion']
-            category = form.cleaned_data['categoria']
-            #image = form.cleaned_data['imagen']
-            logger.debug(title, price, description, category)
-            # Create JSON to upload to the database
-            product_data = {
-                'title': title,
-                'price': price,
-                'description': description,
-                'category': category,
-                'rating': {
-                    'rate': 0,
-                    'count': 1
+            if form.is_valid():
+                title = form.cleaned_data['nombre']
+                price = form.cleaned_data['precio']
+                description = form.cleaned_data['descripcion']
+                category = form.cleaned_data['categoria']
+                # image = form.cleaned_data['imagen']
+                logger.debug(title, price, description, category)
+                # Create JSON to upload to the database
+                product_data = {
+                    'title': title,
+                    'price': price,
+                    'description': description,
+                    'category': category,
+                    'rating': {
+                        'rate': 0,
+                        'count': 1
+                    }
                 }
-            }
 
-            # You mentioned getting the last ID from the database for an incremented ID.
-            # Here, use your logic to fetch the last ID.
-            #last_id = 22
+                # You mentioned getting the last ID from the database for an incremented ID.
+                # Here, use your logic to fetch the last ID.
+                # last_id = 22
 
-            product = Product(**product_data)
-            #product.image = insert_image(image, last_id)  # Assuming insert_image is a function you've defined elsewhere
-            productos_collection.insert_one(product.model_dump())  # Assuming productos_collection is your database collection
-            # Redirect to the homepage
-            categories = productos_collection.distinct('category')
-            return render(request, "index.html", {'categories': categories})
+                product = Product(**product_data)
+                # product.image = insert_image(image, last_id)  # Assuming insert_image is a function you've defined elsewhere
+                productos_collection.insert_one(
+                    product.model_dump())  # Assuming productos_collection is your database collection
+                # Redirect to the homepage
+                categories = productos_collection.distinct('category')
+                return render(request, "index.html", {'categories': categories})
+        else:
+            form = ProductoForm()
+
+        return render(request, 'upload_product.html', {'form': form})
     else:
-        form = ProductoForm()
-
-    return render(request, 'upload_product.html', {'form': form})
+        return HttpResponse("No tienes permisos para acceder a esta página.")
 
 
 def index(request):
@@ -136,7 +142,6 @@ def insert_image(image, id):
         return file_path
     else:
         return None
-
 
 
 def insert(request):

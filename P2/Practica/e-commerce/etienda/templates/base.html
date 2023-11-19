@@ -51,13 +51,15 @@
             </ul>
           </div>
           {% if user.is_authenticated %}
-          <a href="{% url 'upload_product' %}" class="btn btn-primary ms-2">Subir Producto</a>
-
-          <a href="{% url 'account_logout' %}" class="btn btn-primary ms-2">Cerrar sesión</a>
-          {% else %}
-          <a href="{% url 'account_login' %}" class="btn btn-primary ms-2">Iniciar sesión</a>
-          <a href="{% url 'account_signup' %}" class="btn btn-primary ms-2">Registrarse</a>
-          {% endif %}
+            {% if user.is_staff %}
+                <a href="{% url 'upload_product' %}" class="btn btn-primary ms-2">Subir Producto</a>
+            {% endif %}
+            <a>Hola, {{ user.username }}</a>
+            <a href="{% url 'account_logout' %}" class="btn btn-primary ms-2">Cerrar sesión</a>
+        {% else %}
+            <a href="{% url 'account_login' %}" class="btn btn-primary ms-2">Iniciar sesión</a>
+            <a href="{% url 'account_signup' %}" class="btn btn-primary ms-2">Registrarse</a>
+        {% endif %}
 
 
         </div>
