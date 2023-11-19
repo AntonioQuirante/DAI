@@ -3,27 +3,32 @@
 {% load static %}
 
 {% block content %}
-
+<style>
+  /* Estilos para las imágenes */
+  .card-img-top {
+    width: 100%; /* Ancho deseado */
+    height: 300px; /* Altura deseada */
+    object-fit: cover; /* Para mantener la relación de aspecto y cubrir el contenedor */
+  }
+</style>
 
 <div>
-    <div class="row">
+  <div class="row">
 
-      {% for category in categories %}
-      <div class="col-md-4">
-        <div class="card">
-         {% with image_path='landing_images/'|add:category|add:'.jpg' %}
-          <img src="{% static image_path %}" class="card-img-top" alt="{{ category }}">
-         {% endwith %}
-          <div class="card-body">
-            <h5 class="card-title">{{ category }}</h5>
-            <a href="http://localhost:8000/etienda/category/{{ category }}/" class="btn btn-primary">Ver Categoria</a>
-          </div>
+    {% for category in categories %}
+    <div class="col-md-4">
+      <div class="card">
+        {% with image_path='landing_images/'|add:category|add:'.jpg' %}
+        <img src="{% static image_path %}" class="card-img-top" alt="{{ category }}">
+        {% endwith %}
+        <div class="card-body">
+          <h5 class="card-title">{{ category }}</h5>
+          <a href="http://localhost:8000/etienda/category/{{ category }}/" class="btn btn-primary">Ver Categoria</a>
         </div>
       </div>
-      {% endfor %}
-
     </div>
+    {% endfor %}
+
   </div>
-{% endblock%}
-
-
+</div>
+{% endblock %}

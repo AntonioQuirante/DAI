@@ -17,3 +17,4 @@ RUN pip install -r /tmp/requirements.txt && rm /tmp/requirements.txt
 
 # Instalar Pillow
 RUN pip install Pillow
+RUN pip install django-allauth

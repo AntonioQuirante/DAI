@@ -7,4 +7,5 @@ urlpatterns = [
     path("", RedirectView.as_view(url="/etienda/")),
     path("etienda/", include("etienda.urls")),
     path("admin/", admin.site.urls),
+    path('accounts/', include('allauth.urls')),
 ]

@@ -14,51 +14,57 @@
       color: white;
       padding: 10px;
     }
-  </style>
 
+    .blanco {
+      color: #ffffff; /* Color blanco */
+    }
+  </style>
 </head>
 <body>
   <!-- Encabezado -->
-
   <div class="custom-header">
     <div>
       <div class="row align-items-center">
         <div class="col-12 col-md-3">
-            <h1>Tienda</h1> <!-- Título de la tienda -->
+          <!-- Título de la tienda como un enlace -->
+          <a href="http://localhost:8000/etienda/" class="blanco text-decoration-none">
+            <h1>Tienda</h1>
+          </a>
         </div>
         <div class="col-12 col-md-6 my-3 my-md-0">
           <!-- Formulario de búsqueda -->
           <form class="d-flex" method="GET" action="{% url 'search_results' %}">
-              <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar" name="q">
-              <button class="btn btn-success" type="submit">Buscar</button>
+            <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar" name="q">
+            <button class="btn btn-success" type="submit">Buscar</button>
           </form>
         </div>
-        <div class="col-12 col-md-3 text-center">
-          <!-- Dropdowns para categorías, órdenes y logout -->
-          <div class="row">
-            <div class="col-md-auto">
-              <div class="dropdown d-inline">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="categoryDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                  Categorías
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="categoryDropdown">
-                  {% for category in categories %}
-                    <li><a class="dropdown-item" href="http://localhost:8000/etienda/category/{{ category }}/">{{ category }}</a></li>
-                  {% endfor %}
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
         <div class="col-12 col-md-3 text-end">
-          <a href="{% url 'upload_product' %}" class="btn btn-primary">Subir Producto</a>
+          <!-- Botón de subir producto -->
+          <div class="dropdown d-inline">
+            <button class="btn btn-primary dropdown-toggle" type="button" id="categoryDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+              Categorías
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="categoryDropdown">
+              {% for category in categories %}
+                <li><a class="dropdown-item" href="http://localhost:8000/etienda/category/{{ category }}/">{{ category }}</a></li>
+              {% endfor %}
+            </ul>
+          </div>
+          {% if user.is_authenticated %}
+          <a href="{% url 'upload_product' %}" class="btn btn-primary ms-2">Subir Producto</a>
+
+          <a href="{% url 'account_logout' %}" class="btn btn-primary ms-2">Cerrar sesión</a>
+          {% else %}
+          <a href="{% url 'account_login' %}" class="btn btn-primary ms-2">Iniciar sesión</a>
+          <a href="{% url 'account_signup' %}" class="btn btn-primary ms-2">Registrarse</a>
+          {% endif %}
+
+
         </div>
       </div>
     </div>
   </div>
-{% block content %}
-{% endblock %}
-
-
+  {% block content %}
+  {% endblock %}
 </body>
 </html>
