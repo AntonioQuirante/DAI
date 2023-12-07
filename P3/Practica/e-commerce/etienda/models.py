@@ -1,7 +1,7 @@
 from django.db import models
 from pydantic import BaseModel, EmailStr, Field, BaseConfig
 from typing import Optional, Any
-import datetime
+from datetime import datetime
 
 import os
 
