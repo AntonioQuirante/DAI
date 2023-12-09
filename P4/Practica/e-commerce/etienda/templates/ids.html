@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
+
+{% if products %}
+    <ul>
+        {% for product in products %}
+            <li>
+                <strong>ID: {{ product.id }}</strong><br>
+                <strong>{{ product.title }}</strong><br>
+                Price: ${{ product.price }}<br>
+                Description: {{ product.description }}<br>
+                Category: {{ product.category }}<br>
+                <br><br>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No products available.</p>
+{% endif %}
+
+{% endblock %}
