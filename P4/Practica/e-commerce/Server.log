@@ -1,0 +1,400 @@
+[09/Dec/2023 21:17:38] INFO [etienda.api:75] Received PUT request for product with ID: 6574bd9fb9cbb877d866409a
+[09/Dec/2023 21:17:38] INFO [etienda.api:100] Product with ID 6574bd9fb9cbb877d866409a successfully updated
+[09/Dec/2023 21:17:38] ERROR [django:119] "PUT - mod_product /etienda/api/productos/rate/6574bd9fb9cbb877d866409a" ([ErrorWrapper(exc=ValidationError(model='Rate', errors=[{'loc': ('rate',), 'msg': 'field required', 'type': 'value_error.missing'}, {'loc': ('count',), 'msg': 'field required', 'type': 'value_error.missing'}]), loc=('response',))], <class 'abc.NinjaResponseSchema'>)
+[09/Dec/2023 21:17:38] ERROR [django:119] "PUT - mod_product /etienda/api/productos/rate/6574bd9fb9cbb877d866409a" ([ErrorWrapper(exc=ValidationError(model='Rate', errors=[{'loc': ('rate',), 'msg': 'field required', 'type': 'value_error.missing'}, {'loc': ('count',), 'msg': 'field required', 'type': 'value_error.missing'}]), loc=('response',))], <class 'abc.NinjaResponseSchema'>)
+[09/Dec/2023 21:17:38] ERROR [django:106] 2 validation errors for NinjaResponseSchema
+response -> rate
+  field required (type=value_error.missing)
+response -> count
+  field required (type=value_error.missing)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/ninja_extra/operation.py", line 193, in run
+    _processed_results = self._result_to_response(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/ninja/operation.py", line 202, in _result_to_response
+    result = response_model.from_orm(resp_object).dict(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/ninja/schema.py", line 164, in from_orm
+    return super().from_orm(obj)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "pydantic/main.py", line 579, in pydantic.main.BaseModel.from_orm
+pydantic.error_wrappers.ValidationError: 2 validation errors for NinjaResponseSchema
+response -> rate
+  field required (type=value_error.missing)
+response -> count
+  field required (type=value_error.missing)
+[09/Dec/2023 21:17:38] ERROR [django:106] 2 validation errors for NinjaResponseSchema
+response -> rate
+  field required (type=value_error.missing)
+response -> count
+  field required (type=value_error.missing)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/ninja_extra/operation.py", line 193, in run
+    _processed_results = self._result_to_response(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/ninja/operation.py", line 202, in _result_to_response
+    result = response_model.from_orm(resp_object).dict(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/ninja/schema.py", line 164, in from_orm
+    return super().from_orm(obj)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "pydantic/main.py", line 579, in pydantic.main.BaseModel.from_orm
+pydantic.error_wrappers.ValidationError: 2 validation errors for NinjaResponseSchema
+response -> rate
+  field required (type=value_error.missing)
+response -> count
+  field required (type=value_error.missing)
+[09/Dec/2023 21:17:38] ERROR [django.request:241] Internal Server Error: /etienda/api/productos/rate/6574bd9fb9cbb877d866409a
+[09/Dec/2023 21:17:38] ERROR [django.request:241] Internal Server Error: /etienda/api/productos/rate/6574bd9fb9cbb877d866409a
+[09/Dec/2023 21:17:38] ERROR [django.server:212] "PUT /etienda/api/productos/rate/6574bd9fb9cbb877d866409a HTTP/1.1" 500 872
+[09/Dec/2023 21:17:38] ERROR [django.server:212] "PUT /etienda/api/productos/rate/6574bd9fb9cbb877d866409a HTTP/1.1" 500 872
+[09/Dec/2023 21:18:08] INFO [etienda.api:75] Received PUT request for product with ID: 6574bd9fb9cbb877d866409a
+[09/Dec/2023 21:18:08] INFO [etienda.api:100] Product with ID 6574bd9fb9cbb877d866409a successfully updated
+[09/Dec/2023 21:18:08] ERROR [django:119] "PUT - mod_product /etienda/api/productos/rate/6574bd9fb9cbb877d866409a" ([ErrorWrapper(exc=ValidationError(model='Rate', errors=[{'loc': ('rate',), 'msg': 'field required', 'type': 'value_error.missing'}, {'loc': ('count',), 'msg': 'field required', 'type': 'value_error.missing'}]), loc=('response',))], <class 'abc.NinjaResponseSchema'>)
+[09/Dec/2023 21:18:08] ERROR [django:119] "PUT - mod_product /etienda/api/productos/rate/6574bd9fb9cbb877d866409a" ([ErrorWrapper(exc=ValidationError(model='Rate', errors=[{'loc': ('rate',), 'msg': 'field required', 'type': 'value_error.missing'}, {'loc': ('count',), 'msg': 'field required', 'type': 'value_error.missing'}]), loc=('response',))], <class 'abc.NinjaResponseSchema'>)
+[09/Dec/2023 21:18:08] ERROR [django:106] 2 validation errors for NinjaResponseSchema
+response -> rate
+  field required (type=value_error.missing)
+response -> count
+  field required (type=value_error.missing)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/ninja_extra/operation.py", line 193, in run
+    _processed_results = self._result_to_response(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/ninja/operation.py", line 202, in _result_to_response
+    result = response_model.from_orm(resp_object).dict(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/ninja/schema.py", line 164, in from_orm
+    return super().from_orm(obj)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "pydantic/main.py", line 579, in pydantic.main.BaseModel.from_orm
+pydantic.error_wrappers.ValidationError: 2 validation errors for NinjaResponseSchema
+response -> rate
+  field required (type=value_error.missing)
+response -> count
+  field required (type=value_error.missing)
+[09/Dec/2023 21:18:08] ERROR [django:106] 2 validation errors for NinjaResponseSchema
+response -> rate
+  field required (type=value_error.missing)
+response -> count
+  field required (type=value_error.missing)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/ninja_extra/operation.py", line 193, in run
+    _processed_results = self._result_to_response(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/ninja/operation.py", line 202, in _result_to_response
+    result = response_model.from_orm(resp_object).dict(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/ninja/schema.py", line 164, in from_orm
+    return super().from_orm(obj)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "pydantic/main.py", line 579, in pydantic.main.BaseModel.from_orm
+pydantic.error_wrappers.ValidationError: 2 validation errors for NinjaResponseSchema
+response -> rate
+  field required (type=value_error.missing)
+response -> count
+  field required (type=value_error.missing)
+[09/Dec/2023 21:18:08] ERROR [django.request:241] Internal Server Error: /etienda/api/productos/rate/6574bd9fb9cbb877d866409a
+[09/Dec/2023 21:18:08] ERROR [django.request:241] Internal Server Error: /etienda/api/productos/rate/6574bd9fb9cbb877d866409a
+[09/Dec/2023 21:18:08] ERROR [django.server:212] "PUT /etienda/api/productos/rate/6574bd9fb9cbb877d866409a HTTP/1.1" 500 872
+[09/Dec/2023 21:18:08] ERROR [django.server:212] "PUT /etienda/api/productos/rate/6574bd9fb9cbb877d866409a HTTP/1.1" 500 872
+[09/Dec/2023 21:18:15] INFO [etienda.api:75] Received PUT request for product with ID: 6574bd9fb9cbb877d866409a
+[09/Dec/2023 21:18:15] INFO [etienda.api:100] Product with ID 6574bd9fb9cbb877d866409a successfully updated
+[09/Dec/2023 21:18:15] ERROR [django:119] "PUT - mod_product /etienda/api/productos/rate/6574bd9fb9cbb877d866409a" ([ErrorWrapper(exc=ValidationError(model='Rate', errors=[{'loc': ('rate',), 'msg': 'field required', 'type': 'value_error.missing'}, {'loc': ('count',), 'msg': 'field required', 'type': 'value_error.missing'}]), loc=('response',))], <class 'abc.NinjaResponseSchema'>)
+[09/Dec/2023 21:18:15] ERROR [django:119] "PUT - mod_product /etienda/api/productos/rate/6574bd9fb9cbb877d866409a" ([ErrorWrapper(exc=ValidationError(model='Rate', errors=[{'loc': ('rate',), 'msg': 'field required', 'type': 'value_error.missing'}, {'loc': ('count',), 'msg': 'field required', 'type': 'value_error.missing'}]), loc=('response',))], <class 'abc.NinjaResponseSchema'>)
+[09/Dec/2023 21:18:15] ERROR [django:106] 2 validation errors for NinjaResponseSchema
+response -> rate
+  field required (type=value_error.missing)
+response -> count
+  field required (type=value_error.missing)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/ninja_extra/operation.py", line 193, in run
+    _processed_results = self._result_to_response(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/ninja/operation.py", line 202, in _result_to_response
+    result = response_model.from_orm(resp_object).dict(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/ninja/schema.py", line 164, in from_orm
+    return super().from_orm(obj)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "pydantic/main.py", line 579, in pydantic.main.BaseModel.from_orm
+pydantic.error_wrappers.ValidationError: 2 validation errors for NinjaResponseSchema
+response -> rate
+  field required (type=value_error.missing)
+response -> count
+  field required (type=value_error.missing)
+[09/Dec/2023 21:18:15] ERROR [django:106] 2 validation errors for NinjaResponseSchema
+response -> rate
+  field required (type=value_error.missing)
+response -> count
+  field required (type=value_error.missing)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/ninja_extra/operation.py", line 193, in run
+    _processed_results = self._result_to_response(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/ninja/operation.py", line 202, in _result_to_response
+    result = response_model.from_orm(resp_object).dict(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/ninja/schema.py", line 164, in from_orm
+    return super().from_orm(obj)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "pydantic/main.py", line 579, in pydantic.main.BaseModel.from_orm
+pydantic.error_wrappers.ValidationError: 2 validation errors for NinjaResponseSchema
+response -> rate
+  field required (type=value_error.missing)
+response -> count
+  field required (type=value_error.missing)
+[09/Dec/2023 21:18:15] ERROR [django.request:241] Internal Server Error: /etienda/api/productos/rate/6574bd9fb9cbb877d866409a
+[09/Dec/2023 21:18:15] ERROR [django.request:241] Internal Server Error: /etienda/api/productos/rate/6574bd9fb9cbb877d866409a
+[09/Dec/2023 21:18:15] ERROR [django.server:212] "PUT /etienda/api/productos/rate/6574bd9fb9cbb877d866409a HTTP/1.1" 500 872
+[09/Dec/2023 21:18:15] ERROR [django.server:212] "PUT /etienda/api/productos/rate/6574bd9fb9cbb877d866409a HTTP/1.1" 500 872
+[09/Dec/2023 21:18:20] INFO [etienda.api:75] Received PUT request for product with ID: 6574bd9fb9cbb877d866409a
+[09/Dec/2023 21:18:20] INFO [etienda.api:100] Product with ID 6574bd9fb9cbb877d866409a successfully updated
+[09/Dec/2023 21:18:20] ERROR [django:119] "PUT - mod_product /etienda/api/productos/rate/6574bd9fb9cbb877d866409a" ([ErrorWrapper(exc=ValidationError(model='Rate', errors=[{'loc': ('rate',), 'msg': 'field required', 'type': 'value_error.missing'}, {'loc': ('count',), 'msg': 'field required', 'type': 'value_error.missing'}]), loc=('response',))], <class 'abc.NinjaResponseSchema'>)
+[09/Dec/2023 21:18:20] ERROR [django:119] "PUT - mod_product /etienda/api/productos/rate/6574bd9fb9cbb877d866409a" ([ErrorWrapper(exc=ValidationError(model='Rate', errors=[{'loc': ('rate',), 'msg': 'field required', 'type': 'value_error.missing'}, {'loc': ('count',), 'msg': 'field required', 'type': 'value_error.missing'}]), loc=('response',))], <class 'abc.NinjaResponseSchema'>)
+[09/Dec/2023 21:18:20] ERROR [django:106] 2 validation errors for NinjaResponseSchema
+response -> rate
+  field required (type=value_error.missing)
+response -> count
+  field required (type=value_error.missing)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/ninja_extra/operation.py", line 193, in run
+    _processed_results = self._result_to_response(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/ninja/operation.py", line 202, in _result_to_response
+    result = response_model.from_orm(resp_object).dict(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/ninja/schema.py", line 164, in from_orm
+    return super().from_orm(obj)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "pydantic/main.py", line 579, in pydantic.main.BaseModel.from_orm
+pydantic.error_wrappers.ValidationError: 2 validation errors for NinjaResponseSchema
+response -> rate
+  field required (type=value_error.missing)
+response -> count
+  field required (type=value_error.missing)
+[09/Dec/2023 21:18:20] ERROR [django:106] 2 validation errors for NinjaResponseSchema
+response -> rate
+  field required (type=value_error.missing)
+response -> count
+  field required (type=value_error.missing)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/ninja_extra/operation.py", line 193, in run
+    _processed_results = self._result_to_response(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/ninja/operation.py", line 202, in _result_to_response
+    result = response_model.from_orm(resp_object).dict(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/ninja/schema.py", line 164, in from_orm
+    return super().from_orm(obj)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "pydantic/main.py", line 579, in pydantic.main.BaseModel.from_orm
+pydantic.error_wrappers.ValidationError: 2 validation errors for NinjaResponseSchema
+response -> rate
+  field required (type=value_error.missing)
+response -> count
+  field required (type=value_error.missing)
+[09/Dec/2023 21:18:20] ERROR [django.request:241] Internal Server Error: /etienda/api/productos/rate/6574bd9fb9cbb877d866409a
+[09/Dec/2023 21:18:20] ERROR [django.request:241] Internal Server Error: /etienda/api/productos/rate/6574bd9fb9cbb877d866409a
+[09/Dec/2023 21:18:20] ERROR [django.server:212] "PUT /etienda/api/productos/rate/6574bd9fb9cbb877d866409a HTTP/1.1" 500 872
+[09/Dec/2023 21:18:20] ERROR [django.server:212] "PUT /etienda/api/productos/rate/6574bd9fb9cbb877d866409a HTTP/1.1" 500 872
+[09/Dec/2023 21:18:26] INFO [etienda.api:75] Received PUT request for product with ID: 6574bd9fb9cbb877d866409a
+[09/Dec/2023 21:18:26] INFO [etienda.api:100] Product with ID 6574bd9fb9cbb877d866409a successfully updated
+[09/Dec/2023 21:18:26] ERROR [django:119] "PUT - mod_product /etienda/api/productos/rate/6574bd9fb9cbb877d866409a" ([ErrorWrapper(exc=ValidationError(model='Rate', errors=[{'loc': ('rate',), 'msg': 'field required', 'type': 'value_error.missing'}, {'loc': ('count',), 'msg': 'field required', 'type': 'value_error.missing'}]), loc=('response',))], <class 'abc.NinjaResponseSchema'>)
+[09/Dec/2023 21:18:26] ERROR [django:119] "PUT - mod_product /etienda/api/productos/rate/6574bd9fb9cbb877d866409a" ([ErrorWrapper(exc=ValidationError(model='Rate', errors=[{'loc': ('rate',), 'msg': 'field required', 'type': 'value_error.missing'}, {'loc': ('count',), 'msg': 'field required', 'type': 'value_error.missing'}]), loc=('response',))], <class 'abc.NinjaResponseSchema'>)
+[09/Dec/2023 21:18:26] ERROR [django:106] 2 validation errors for NinjaResponseSchema
+response -> rate
+  field required (type=value_error.missing)
+response -> count
+  field required (type=value_error.missing)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/ninja_extra/operation.py", line 193, in run
+    _processed_results = self._result_to_response(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/ninja/operation.py", line 202, in _result_to_response
+    result = response_model.from_orm(resp_object).dict(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/ninja/schema.py", line 164, in from_orm
+    return super().from_orm(obj)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "pydantic/main.py", line 579, in pydantic.main.BaseModel.from_orm
+pydantic.error_wrappers.ValidationError: 2 validation errors for NinjaResponseSchema
+response -> rate
+  field required (type=value_error.missing)
+response -> count
+  field required (type=value_error.missing)
+[09/Dec/2023 21:18:26] ERROR [django:106] 2 validation errors for NinjaResponseSchema
+response -> rate
+  field required (type=value_error.missing)
+response -> count
+  field required (type=value_error.missing)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/ninja_extra/operation.py", line 193, in run
+    _processed_results = self._result_to_response(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/ninja/operation.py", line 202, in _result_to_response
+    result = response_model.from_orm(resp_object).dict(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/ninja/schema.py", line 164, in from_orm
+    return super().from_orm(obj)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "pydantic/main.py", line 579, in pydantic.main.BaseModel.from_orm
+pydantic.error_wrappers.ValidationError: 2 validation errors for NinjaResponseSchema
+response -> rate
+  field required (type=value_error.missing)
+response -> count
+  field required (type=value_error.missing)
+[09/Dec/2023 21:18:26] ERROR [django.request:241] Internal Server Error: /etienda/api/productos/rate/6574bd9fb9cbb877d866409a
+[09/Dec/2023 21:18:26] ERROR [django.request:241] Internal Server Error: /etienda/api/productos/rate/6574bd9fb9cbb877d866409a
+[09/Dec/2023 21:18:26] ERROR [django.server:212] "PUT /etienda/api/productos/rate/6574bd9fb9cbb877d866409a HTTP/1.1" 500 872
+[09/Dec/2023 21:18:26] ERROR [django.server:212] "PUT /etienda/api/productos/rate/6574bd9fb9cbb877d866409a HTTP/1.1" 500 872
+[09/Dec/2023 21:18:31] INFO [etienda.api:75] Received PUT request for product with ID: 6574bd9fb9cbb877d866409a
+[09/Dec/2023 21:18:31] INFO [etienda.api:100] Product with ID 6574bd9fb9cbb877d866409a successfully updated
+[09/Dec/2023 21:18:31] ERROR [django:119] "PUT - mod_product /etienda/api/productos/rate/6574bd9fb9cbb877d866409a" ([ErrorWrapper(exc=ValidationError(model='Rate', errors=[{'loc': ('rate',), 'msg': 'field required', 'type': 'value_error.missing'}, {'loc': ('count',), 'msg': 'field required', 'type': 'value_error.missing'}]), loc=('response',))], <class 'abc.NinjaResponseSchema'>)
+[09/Dec/2023 21:18:31] ERROR [django:119] "PUT - mod_product /etienda/api/productos/rate/6574bd9fb9cbb877d866409a" ([ErrorWrapper(exc=ValidationError(model='Rate', errors=[{'loc': ('rate',), 'msg': 'field required', 'type': 'value_error.missing'}, {'loc': ('count',), 'msg': 'field required', 'type': 'value_error.missing'}]), loc=('response',))], <class 'abc.NinjaResponseSchema'>)
+[09/Dec/2023 21:18:31] ERROR [django:106] 2 validation errors for NinjaResponseSchema
+response -> rate
+  field required (type=value_error.missing)
+response -> count
+  field required (type=value_error.missing)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/ninja_extra/operation.py", line 193, in run
+    _processed_results = self._result_to_response(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/ninja/operation.py", line 202, in _result_to_response
+    result = response_model.from_orm(resp_object).dict(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/ninja/schema.py", line 164, in from_orm
+    return super().from_orm(obj)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "pydantic/main.py", line 579, in pydantic.main.BaseModel.from_orm
+pydantic.error_wrappers.ValidationError: 2 validation errors for NinjaResponseSchema
+response -> rate
+  field required (type=value_error.missing)
+response -> count
+  field required (type=value_error.missing)
+[09/Dec/2023 21:18:31] ERROR [django:106] 2 validation errors for NinjaResponseSchema
+response -> rate
+  field required (type=value_error.missing)
+response -> count
+  field required (type=value_error.missing)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/ninja_extra/operation.py", line 193, in run
+    _processed_results = self._result_to_response(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/ninja/operation.py", line 202, in _result_to_response
+    result = response_model.from_orm(resp_object).dict(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/ninja/schema.py", line 164, in from_orm
+    return super().from_orm(obj)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "pydantic/main.py", line 579, in pydantic.main.BaseModel.from_orm
+pydantic.error_wrappers.ValidationError: 2 validation errors for NinjaResponseSchema
+response -> rate
+  field required (type=value_error.missing)
+response -> count
+  field required (type=value_error.missing)
+[09/Dec/2023 21:18:31] ERROR [django.request:241] Internal Server Error: /etienda/api/productos/rate/6574bd9fb9cbb877d866409a
+[09/Dec/2023 21:18:31] ERROR [django.request:241] Internal Server Error: /etienda/api/productos/rate/6574bd9fb9cbb877d866409a
+[09/Dec/2023 21:18:31] ERROR [django.server:212] "PUT /etienda/api/productos/rate/6574bd9fb9cbb877d866409a HTTP/1.1" 500 872
+[09/Dec/2023 21:18:31] ERROR [django.server:212] "PUT /etienda/api/productos/rate/6574bd9fb9cbb877d866409a HTTP/1.1" 500 872
+[09/Dec/2023 21:22:42] INFO [etienda.api:75] Received PUT request for product with ID: 6574bd9fb9cbb877d866409b
+[09/Dec/2023 21:22:42] INFO [etienda.api:100] Product with ID 6574bd9fb9cbb877d866409b successfully updated
+[09/Dec/2023 21:22:42] ERROR [django:119] "PUT - mod_product /etienda/api/productos/rate/6574bd9fb9cbb877d866409b" ([ErrorWrapper(exc=ValidationError(model='Rate', errors=[{'loc': ('rate',), 'msg': 'field required', 'type': 'value_error.missing'}, {'loc': ('count',), 'msg': 'field required', 'type': 'value_error.missing'}]), loc=('response',))], <class 'abc.NinjaResponseSchema'>)
+[09/Dec/2023 21:22:42] ERROR [django:119] "PUT - mod_product /etienda/api/productos/rate/6574bd9fb9cbb877d866409b" ([ErrorWrapper(exc=ValidationError(model='Rate', errors=[{'loc': ('rate',), 'msg': 'field required', 'type': 'value_error.missing'}, {'loc': ('count',), 'msg': 'field required', 'type': 'value_error.missing'}]), loc=('response',))], <class 'abc.NinjaResponseSchema'>)
+[09/Dec/2023 21:22:42] ERROR [django:106] 2 validation errors for NinjaResponseSchema
+response -> rate
+  field required (type=value_error.missing)
+response -> count
+  field required (type=value_error.missing)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/ninja_extra/operation.py", line 193, in run
+    _processed_results = self._result_to_response(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/ninja/operation.py", line 202, in _result_to_response
+    result = response_model.from_orm(resp_object).dict(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/ninja/schema.py", line 164, in from_orm
+    return super().from_orm(obj)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "pydantic/main.py", line 579, in pydantic.main.BaseModel.from_orm
+pydantic.error_wrappers.ValidationError: 2 validation errors for NinjaResponseSchema
+response -> rate
+  field required (type=value_error.missing)
+response -> count
+  field required (type=value_error.missing)
+[09/Dec/2023 21:22:42] ERROR [django:106] 2 validation errors for NinjaResponseSchema
+response -> rate
+  field required (type=value_error.missing)
+response -> count
+  field required (type=value_error.missing)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/ninja_extra/operation.py", line 193, in run
+    _processed_results = self._result_to_response(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/ninja/operation.py", line 202, in _result_to_response
+    result = response_model.from_orm(resp_object).dict(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/ninja/schema.py", line 164, in from_orm
+    return super().from_orm(obj)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "pydantic/main.py", line 579, in pydantic.main.BaseModel.from_orm
+pydantic.error_wrappers.ValidationError: 2 validation errors for NinjaResponseSchema
+response -> rate
+  field required (type=value_error.missing)
+response -> count
+  field required (type=value_error.missing)
+[09/Dec/2023 21:22:42] ERROR [django.request:241] Internal Server Error: /etienda/api/productos/rate/6574bd9fb9cbb877d866409b
+[09/Dec/2023 21:22:42] ERROR [django.request:241] Internal Server Error: /etienda/api/productos/rate/6574bd9fb9cbb877d866409b
+[09/Dec/2023 21:22:42] ERROR [django.server:212] "PUT /etienda/api/productos/rate/6574bd9fb9cbb877d866409b HTTP/1.1" 500 872
+[09/Dec/2023 21:22:42] ERROR [django.server:212] "PUT /etienda/api/productos/rate/6574bd9fb9cbb877d866409b HTTP/1.1" 500 872
+[09/Dec/2023 21:22:43] INFO [etienda.api:75] Received PUT request for product with ID: 6574bd9fb9cbb877d866409b
+[09/Dec/2023 21:22:43] INFO [etienda.api:100] Product with ID 6574bd9fb9cbb877d866409b successfully updated
+[09/Dec/2023 21:22:43] ERROR [django:119] "PUT - mod_product /etienda/api/productos/rate/6574bd9fb9cbb877d866409b" ([ErrorWrapper(exc=ValidationError(model='Rate', errors=[{'loc': ('rate',), 'msg': 'field required', 'type': 'value_error.missing'}, {'loc': ('count',), 'msg': 'field required', 'type': 'value_error.missing'}]), loc=('response',))], <class 'abc.NinjaResponseSchema'>)
+[09/Dec/2023 21:22:43] ERROR [django:119] "PUT - mod_product /etienda/api/productos/rate/6574bd9fb9cbb877d866409b" ([ErrorWrapper(exc=ValidationError(model='Rate', errors=[{'loc': ('rate',), 'msg': 'field required', 'type': 'value_error.missing'}, {'loc': ('count',), 'msg': 'field required', 'type': 'value_error.missing'}]), loc=('response',))], <class 'abc.NinjaResponseSchema'>)
+[09/Dec/2023 21:22:43] ERROR [django:106] 2 validation errors for NinjaResponseSchema
+response -> rate
+  field required (type=value_error.missing)
+response -> count
+  field required (type=value_error.missing)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/ninja_extra/operation.py", line 193, in run
+    _processed_results = self._result_to_response(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/ninja/operation.py", line 202, in _result_to_response
+    result = response_model.from_orm(resp_object).dict(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/ninja/schema.py", line 164, in from_orm
+    return super().from_orm(obj)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "pydantic/main.py", line 579, in pydantic.main.BaseModel.from_orm
+pydantic.error_wrappers.ValidationError: 2 validation errors for NinjaResponseSchema
+response -> rate
+  field required (type=value_error.missing)
+response -> count
+  field required (type=value_error.missing)
+[09/Dec/2023 21:22:43] ERROR [django:106] 2 validation errors for NinjaResponseSchema
+response -> rate
+  field required (type=value_error.missing)
+response -> count
+  field required (type=value_error.missing)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/ninja_extra/operation.py", line 193, in run
+    _processed_results = self._result_to_response(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/ninja/operation.py", line 202, in _result_to_response
+    result = response_model.from_orm(resp_object).dict(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/ninja/schema.py", line 164, in from_orm
+    return super().from_orm(obj)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "pydantic/main.py", line 579, in pydantic.main.BaseModel.from_orm
+pydantic.error_wrappers.ValidationError: 2 validation errors for NinjaResponseSchema
+response -> rate
+  field required (type=value_error.missing)
+response -> count
+  field required (type=value_error.missing)
+[09/Dec/2023 21:22:43] ERROR [django.request:241] Internal Server Error: /etienda/api/productos/rate/6574bd9fb9cbb877d866409b
+[09/Dec/2023 21:22:43] ERROR [django.request:241] Internal Server Error: /etienda/api/productos/rate/6574bd9fb9cbb877d866409b
+[09/Dec/2023 21:22:43] ERROR [django.server:212] "PUT /etienda/api/productos/rate/6574bd9fb9cbb877d866409b HTTP/1.1" 500 872
+[09/Dec/2023 21:22:43] ERROR [django.server:212] "PUT /etienda/api/productos/rate/6574bd9fb9cbb877d866409b HTTP/1.1" 500 872

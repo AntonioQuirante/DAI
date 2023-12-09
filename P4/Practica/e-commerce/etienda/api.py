@@ -47,6 +47,7 @@ class ProductSchemaNew(Schema):
     category: str
     rating: Rate
 
+
 class PaginatedProductListResponse(Schema):
     items: list[ProductSchema]
     total_items: int
@@ -68,6 +69,40 @@ def generate_random_id(length=12):
     random_string = ''.join(random.choice(characters) for _ in range(length))
     return random_string
 
+@api.put("/productos/rate/{id}", tags=['TIENDA DAI'], response={200: Rate, 404: ErrorSchema}) #cambia la base de datos aunque devuelva error
+def mod_product(request, id: str, payload: Rate):
+    try:
+        logger.info(f"Received PUT request for product with ID: {id}")
+
+        # Retrieve the product
+        product = busca_prod(id)
+
+        logger.debug(f"Product details before update: {product}")
+        logger.debug(payload.dict())
+
+        # Specify allowed fields to update
+        allowed_fields = ['rate', 'count']
+        rating = {'rate': 0, 'count': 0}
+        # Update allowed fields from the payload
+        for field, value in payload.dict().items():
+            if field in allowed_fields:
+                try:
+                    rating[field] = type(rating[field])(value)
+                except Exception as e:
+                    logger.error(f"Error setting attribute {field}: {e}")
+
+        product['rating'] = rating
+        logger.debug(f"Product details after update: {product}")
+
+        # Replace the product in the database
+        productos_collection.replace_one({'_id': product['_id']}, product)
+
+        logger.info(f"Product with ID {id} successfully updated")
+
+        return 200
+    except Exception as e:
+        logger.error(f"Error updating product: {str(e)}")
+        return 404, {'message': 'no encontrado'}
 
 @api.post("/productos", tags=['TIENDA DAI'], response={201: ProductSchema, 400: ErrorSchema})
 def add_product(request, payload: ProductSchemaNew):

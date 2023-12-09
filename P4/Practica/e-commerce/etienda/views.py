@@ -101,7 +101,15 @@ def category_index(request, category):
     products = productos_collection.find({
         "category": {"$regex": category}
     })
-    return render(request, "category.html", {'products': products, 'categories': categories})
+
+    product_models = []
+
+    for product in products:
+        product['id'] = str(product.get('_id'))
+        product_models.append(product)
+
+    logger.debug(products)
+    return render(request, "category.html", {'products': product_models, 'categories': categories})
 
 
 def search(request):

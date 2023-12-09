@@ -9,6 +9,21 @@
     height: 300px; /* Altura deseada */
     object-fit: cover; /* Para mantener la relación de aspecto y cubrir el contenedor */
   }
+
+  /* Styles for Star Rating */
+.star-rating {
+  color: #188f0a; /* Color for checked stars (e.g., gold) */
+  font-size: 24px; /* Adjust the size as needed */
+}
+
+.checked {
+  color: #188f0a;
+}
+
+.not_checked {
+  color: #ddd; /* Color for unchecked stars */
+}
+
 </style>
 
 <div>
@@ -16,6 +31,7 @@
     {% for product in products %}
     <div class="col-md-4">
       <div class="card">
+
         {% with image_path=product.image|slice:'7:' %}
         <img src="{% static image_path %}" class="card-img-top" alt="{{ product.title }}">
         {% endwith %}
@@ -23,6 +39,8 @@
           <h5 class="card-title">{{ product.title }}</h5>
           <h5 class="card-title">{{ product.price }}€</h5>
           <h5 class="card-title">{{ product.description }}</h5>
+          <div class="stars" data-product-id="{{ product.id }}" data-rating="{{ product.rating.rate }}" data-count="{{ product.rating.count }}">
+          </div>
         </div>
       </div>
     </div>

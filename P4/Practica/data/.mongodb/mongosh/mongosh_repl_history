@@ -1,4 +1,3 @@
 db.productos.find()
-db.productos.find
 use tienda
 show dbs

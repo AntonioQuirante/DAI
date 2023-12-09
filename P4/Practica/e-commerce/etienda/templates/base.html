@@ -7,6 +7,99 @@
   <!-- Enlaces a los archivos de Bootstrap CSS y JS desde un CDN -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const starRatingContainers = document.querySelectorAll('.stars');
+
+    starRatingContainers.forEach((container) => {
+      const count = parseInt(container.dataset.count);
+      const rating = parseInt(container.dataset.rating);
+      console.log(rating)
+      for (let i = 0; i < rating; i++) {
+        container.innerHTML+=`<span class="fa fa-star checked"></span>`
+      }
+      for (let i = 0; i < (5 - rating); i++) {
+        container.innerHTML+=`
+			<span class="fa fa-star not-checked"></span>`
+      }
+    });
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const starRatingContainers = document.querySelectorAll('.stars');
+
+    starRatingContainers.forEach((container) => {
+        const productID = container.dataset.productId;
+        let currentRating = parseFloat(container.dataset.rating);
+        const count = parseInt(container.dataset.count);
+
+        container.addEventListener('click', (event) => {
+            const clickedStarIndex = Array.from(container.children).indexOf(event.target);
+
+            // Calculate the new rating based on the clicked star
+            const newRating = clickedStarIndex + 1;
+
+            // Update the visual representation of stars
+            updateStars(container, newRating, count);
+
+            // Optionally, send the new rating to the server
+            sendRatingToServer(productID, newRating, count);
+
+            // Update the dataset rating attribute
+            container.dataset.rating = newRating;
+            currentRating = newRating;
+        });
+
+        // Initial rendering of stars
+        updateStars(container, currentRating);
+    });
+});
+
+function updateStars(container, rating, count) {
+    let starsHTML = '';
+
+    for (let i = 0; i < Math.floor(rating); i++) {
+        starsHTML += '<span class="fa fa-star checked"></span>';
+    }
+
+    if (rating % 1 !== 0) {
+        starsHTML += '<span class="fa fa-star-half checked"></span>';
+    }
+
+    const remainingStars = 5 - Math.ceil(rating);
+    for (let i = 0; i < remainingStars; i++) {
+        starsHTML += '<span class="fa fa-star not_checked"></span>';
+    }
+
+    container.innerHTML = starsHTML;
+}
+
+function sendRatingToServer(productID, rating, count) {
+  const endpoint = `productos/rate/${productID}`;
+  const url = `http://localhost:8000/etienda/api/${endpoint}`;
+
+  fetch(url, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ rate: rating, count: count }),
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      console.log('Rating successfully sent to the server');
+    })
+    .catch((error) => {
+      console.error('Error sending rating to server:', error);
+    });
+}
+
+</script>
 
   <style>
     .custom-header {
