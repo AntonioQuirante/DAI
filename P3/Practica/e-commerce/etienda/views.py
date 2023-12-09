@@ -26,6 +26,11 @@ def get_last_object_id():
         return int(last_object['_id'].generation_time.timestamp())
     return None  # Manejar el caso en el que no haya documentos en la colección
 
+def generate_random_string(length=12):
+    characters = string.ascii_letters + string.digits
+    random_string = ''.join(random.choice(characters) for _ in range(length))
+    return random_string
+
 @login_required
 def upload_product(request):
     if request.user.is_staff:
@@ -53,7 +58,7 @@ def upload_product(request):
 
                 # You mentioned getting the last ID from the database for an incremented ID.
                 # Here, use your logic to fetch the last ID.
-                last_id = 22
+                last_id = generate_random_string()
 
                 product = Product(**product_data)
                 product.image = insert_image(image,
@@ -75,6 +80,21 @@ def index(request):
     categories = productos_collection.distinct('category')
     return render(request, "index.html", {'categories': categories})
 
+def busca_prod(product_id):
+    product_object_id = ObjectId(product_id)
+    product = productos_collection.find_one({'_id': product_object_id})
+    return product
+
+
+def product_list(request):
+    products = list(productos_collection.find())
+    product_models = []
+
+    for product in products:
+        product['id'] = str(product.get('_id'))
+        product_models.append(product)
+
+    return render(request, 'ids.html', {'products': product_models})
 
 def category_index(request, category):
     categories = productos_collection.distinct('category')
@@ -152,7 +172,10 @@ def insert(request):
     for producto in products:
         product = Product(**producto)
         product.image = download_image(producto.get('image'), producto.get('id'))
-        productos_collection.insert_one(product.model_dump())
+        product_dict = product.dict()
+        logger.debug(product_dict)
+        productos_collection.insert_one(product_dict)
+
     response_data = {
         'message': 'Datos Insertados'
     }
