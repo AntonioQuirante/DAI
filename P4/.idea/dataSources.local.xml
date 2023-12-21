@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal" created-in="PY-233.11799.259">
+    <data-source name="@localhost" uuid="a8cef8f7-8e7b-4c92-80a9-02bf825fe402">
+      <database-info product="Mongo DB" version="7.0.1" jdbc-version="4.2" driver-name="MongoDB JDBC Driver" driver-version="1.18" dbms="MONGO" exact-version="7.0.1" exact-driver-version="1.18" />
+      <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
+      <secret-storage>master_key</secret-storage>
+      <auth-provider>no-auth</auth-provider>
+      <schema-mapping />
+    </data-source>
+  </component>
+</project>
