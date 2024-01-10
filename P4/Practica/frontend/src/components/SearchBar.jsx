@@ -23,15 +23,14 @@ export const SearchBar = ({ setResults }) => {
   };
 
     const fetchData1 = (value) => {
-    fetch("https://jsonplaceholder.typicode.com/users")
+    fetch("http://localhost:8000/etienda/api/products")
       .then((response) => response.json())
       .then((json) => {
-        const results = json.filter((user) => {
+        const results = json.filter((respuesta) => {
           return (
             value &&
-            user &&
-            user.name &&
-            user.name.toLowerCase().includes(value)
+            respuesta &&
+            respuesta.title.toLowerCase().includes(value)
           );
         });
         setResults(results);
@@ -40,7 +39,7 @@ export const SearchBar = ({ setResults }) => {
 
   const handleChange = (value) => {
     setInput(value);
-    fetchData(value);
+    fetchData1(value);
   };
 
   return (

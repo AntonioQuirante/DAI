@@ -8,7 +8,7 @@ import textwrap
 from pymongo import MongoClient
 import requests
 import logging
-from typing import Optional, Any
+from typing import Optional, Any, List
 
 api = NinjaExtraAPI()
 client = MongoClient('mongo', 27017)
@@ -53,6 +53,9 @@ class PaginatedProductListResponse(Schema):
     total_items: int
     total_pages: int
     page: int
+
+class AllProductsResponse(Schema):
+    items: List[ProductSchema]
 
 class ErrorSchema(Schema):
     message: str
@@ -156,17 +159,16 @@ def get_product_list(request, desde: int = 0, hasta: int = 10):
         return 500, {'message': 'Error al intentar obtener la lista de productos paginada'}
 
 
-    @api.get("/allproductos", tags=['REACT'], response={200: PaginatedProductListResponse})
-    def get_all_products(request):
+@api.get("/products", tags=['TIENDA DAI'], response=List[ProductSchema])
+def get_all_products(request):
         try:
             logger.info(f"Received GET request for products")
             products = productos_collection.find()
             product_list = [ProductSchema(**product) for product in products]
 
-            return JSONResponse(content=product_list, status_code=200)
+            return 200, product_list
         except:
-            return JSONResponse(content={'message': 'Error al intentar obtener la lista de productos paginada'},
-                                status_code=500)
+            return 500, {'message': 'Error al intentar obtener la lista de productos'}
 
 
 @api.get("/productos/{id}", tags=['TIENDA DAI'], response={200: ProductSchema, 404: ErrorSchema}) #funciona perfe
