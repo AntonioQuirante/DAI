@@ -155,6 +155,20 @@ def get_product_list(request, desde: int = 0, hasta: int = 10):
     except:
         return 500, {'message': 'Error al intentar obtener la lista de productos paginada'}
 
+
+    @api.get("/allproductos", tags=['REACT'], response={200: PaginatedProductListResponse})
+    def get_all_products(request):
+        try:
+            logger.info(f"Received GET request for products")
+            products = productos_collection.find()
+            product_list = [ProductSchema(**product) for product in products]
+
+            return JSONResponse(content=product_list, status_code=200)
+        except:
+            return JSONResponse(content={'message': 'Error al intentar obtener la lista de productos paginada'},
+                                status_code=500)
+
+
 @api.get("/productos/{id}", tags=['TIENDA DAI'], response={200: ProductSchema, 404: ErrorSchema}) #funciona perfe
 def get_product(request, id: str):
     try:

@@ -14,6 +14,7 @@ RUN apk update && apk add --no-cache \
 # Agregar las dependencias al contenedor e instalar las dependencias de Python
 ADD requirements.txt /tmp/requirements.txt
 RUN pip install -r /tmp/requirements.txt && rm /tmp/requirements.txt
+RUN pip install django-cors-headers
 
 # Instalar Pillow
 RUN pip install Pillow
