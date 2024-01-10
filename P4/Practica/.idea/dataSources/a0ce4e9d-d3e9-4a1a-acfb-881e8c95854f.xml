@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="@localhost">
+  <database-model serializer="dbm" dbms="MONGO" family-id="MONGO" format-version="4.51">
+    <root id="1">
+      <ServerVersion>6.0.12</ServerVersion>
+    </root>
+    <schema id="2" parent="1" name="admin"/>
+    <schema id="3" parent="1" name="config"/>
+    <schema id="4" parent="1" name="local"/>
+    <schema id="5" parent="1" name="tienda">
+      <LastIntrospectionLocalTimestamp>2023-12-21.15:51:36</LastIntrospectionLocalTimestamp>
+    </schema>
+    <table id="6" parent="5" name="productos"/>
+    <column id="7" parent="6" name="_id">
+      <DasType>ObjectId|12s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="8" parent="6" name="category">
+      <DasType>String|12s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="9" parent="6" name="description">
+      <DasType>String|12s</DasType>
+      <Position>3</Position>
+    </column>
+    <column id="10" parent="6" name="image">
+      <DasType>String|12s</DasType>
+      <Position>4</Position>
+    </column>
+    <column id="11" parent="6" name="price">
+      <DasType>Double|8s</DasType>
+      <Position>5</Position>
+    </column>
+    <column id="12" parent="6" name="rating">
+      <DasType>Object|4999544s</DasType>
+      <Position>6</Position>
+    </column>
+    <column id="13" parent="6" name="rating.count">
+      <DasType>Int32|4s</DasType>
+      <Position>7</Position>
+    </column>
+    <column id="14" parent="6" name="rating.rate">
+      <DasType>Double|8s</DasType>
+      <Position>8</Position>
+    </column>
+    <column id="15" parent="6" name="title">
+      <DasType>String|12s</DasType>
+      <Position>9</Position>
+    </column>
+  </database-model>
+</dataSource>
