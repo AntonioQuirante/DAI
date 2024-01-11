@@ -4,6 +4,9 @@ FROM python:3.11-alpine
 WORKDIR /e-commerce
 COPY . /e-commerce
 
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+
 RUN apk update && apk add --no-cache \
         python3-dev py3-pip py3-setuptools \
         libffi-dev libxml2-dev libxslt-dev \
