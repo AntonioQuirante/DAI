@@ -1,0 +1,12 @@
+[16/Jan/2024 20:51:08] INFO [etienda.api:113] Received POST request to add a product
+[16/Jan/2024 20:51:08] ERROR [etienda.api:131] Error adding product: 1 validation error for Product
+rating -> count
+  ensure this value is greater than or equal to 1 (type=value_error.number.not_ge; limit_value=1)
+[16/Jan/2024 20:51:17] INFO [etienda.api:113] Received POST request to add a product
+[16/Jan/2024 20:51:17] ERROR [etienda.api:131] Error adding product: 1 validation error for Product
+rating -> count
+  ensure this value is greater than or equal to 1 (type=value_error.number.not_ge; limit_value=1)
+[16/Jan/2024 20:52:06] INFO [etienda.api:137] Received GET request for products with pagination: desde=0, hasta=10
+[16/Jan/2024 20:52:25] INFO [etienda.api:113] Received POST request to add a product
+[16/Jan/2024 20:52:25] INFO [etienda.api:127] Product added with ID: 65a6ec892fb78d27708e0f94
+[16/Jan/2024 20:52:37] INFO [etienda.api:165] Received GET request for products

@@ -115,13 +115,21 @@ def category_index(request, category):
 def search(request):
     categories = productos_collection.distinct('category')
     query = request.GET.get('q')
+    products = None
     if query:
-        results = productos_collection.find({
+        products = productos_collection.find({
             "title": {"$regex": query}
         })
     else:
-        results = None
-    return render(request, 'search.html', {'products': products, 'categories': categories})
+        products = None
+
+    product_models = []
+
+    for product in products:
+        product['id'] = str(product.get('_id'))
+        product_models.append(product)
+
+    return render(request, 'search.html', {'products': product_models, 'categories': categories})
 
 
 def getProducts(api_url='https://fakestoreapi.com/products'):
