@@ -1,10 +1,13 @@
 # docker-compose.yml
+version: '3'
+
 services:
-  p4:
+  p6:
     build: ./e-commerce
     volumes:
       - ./e-commerce:/e-commerce
-    ports:
+      - static_volume:/e-commerce/static
+    expose:
       - 8000:8000
     depends_on:
       - mongo
@@ -16,3 +19,15 @@ services:
       - 27017:27017
     volumes:
       - ./data:/data/db
+
+  nginx:
+    build: ./nginx
+    ports:
+      - 1337:80
+    depends_on:
+      - p6
+    volumes:
+      - static_volume:/e-commerce/static
+
+volumes:
+  static_volume:

@@ -121,7 +121,7 @@ def search(request):
         })
     else:
         results = None
-    return render(request, 'search.html', {'results': results, 'categories': categories})
+    return render(request, 'search.html', {'products': products, 'categories': categories})
 
 
 def getProducts(api_url='https://fakestoreapi.com/products'):

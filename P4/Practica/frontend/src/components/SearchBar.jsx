@@ -23,7 +23,7 @@ export const SearchBar = ({ setResults }) => {
   };
 
     const fetchData1 = (value) => {
-    fetch("http://localhost:8000/etienda/api/products")
+    fetch("http://localhost:1337/etienda/api/products")
       .then((response) => response.json())
       .then((json) => {
         const results = json.filter((respuesta) => {

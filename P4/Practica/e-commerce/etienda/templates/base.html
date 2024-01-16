@@ -79,7 +79,7 @@ function updateStars(container, rating, count) {
 
 function sendRatingToServer(productID, rating, count) {
   const endpoint = `productos/rate/${productID}`;
-  const url = `http://localhost:8000/etienda/api/${endpoint}`;
+  const url = `http://localhost:1337/etienda/api/${endpoint}`;
 
   fetch(url, {
     method: 'PUT',
@@ -120,7 +120,7 @@ function sendRatingToServer(productID, rating, count) {
       <div class="row align-items-center">
         <div class="col-12 col-md-3">
           <!-- Título de la tienda como un enlace -->
-          <a href="http://localhost:8000/etienda/" class="blanco text-decoration-none">
+          <a href="http://localhost:1337/etienda/" class="blanco text-decoration-none">
             <h1>Tienda</h1>
           </a>
         </div>
@@ -139,7 +139,7 @@ function sendRatingToServer(productID, rating, count) {
             </button>
             <ul class="dropdown-menu" aria-labelledby="categoryDropdown">
               {% for category in categories %}
-                <li><a class="dropdown-item" href="http://localhost:8000/etienda/category/{{ category }}/">{{ category }}</a></li>
+                <li><a class="dropdown-item" href="http://localhost:1337/etienda/category/{{ category }}/">{{ category }}</a></li>
               {% endfor %}
             </ul>
           </div>

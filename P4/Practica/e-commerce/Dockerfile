@@ -18,6 +18,7 @@ RUN apk update && apk add --no-cache \
 ADD requirements.txt /tmp/requirements.txt
 RUN pip install -r /tmp/requirements.txt && rm /tmp/requirements.txt
 RUN pip install django-cors-headers
+RUN pip install django-crispy-forms
 
 # Instalar Pillow
 RUN pip install Pillow
